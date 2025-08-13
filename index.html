@@ -26,96 +26,50 @@
             gap: 30px;
         }
 
-        /* Fixed sidebar */
-        .sidebar {
+    /* Sidebar centered H+V and stays visible */
+        .sidebar{
             position: sticky;
-            top: 20px; /* distance from top of page */
+            top: 50vh;                 /* stick to middle of viewport */
+            transform: translateY(-50%); /* shift up by half its height */
             flex: 0 0 200px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            align-items: center;
-            height: fit-content;
+            display:flex; flex-direction:column; gap:15px;
+            align-items:center;        /* horizontal centering of buttons */
+            justify-content:center;    /* extra safety for internal centering */
+            height: max-content;
         }
-
-        .sidebar a {
-            background-color: #DF2700;
-            color: white;
-            text-decoration: none;
-            padding: 12px 18px;
-            border-radius: 5px;
-            font-weight: bold;
-            text-align: center;
-            width: 100%;
-            max-width: 180px;
-            transition: background-color 0.3s ease;
+        .sidebar a{
+            display:block;
+            background:#DF2700; color:#fff; text-decoration:none;
+            padding:12px 18px; border-radius:5px; font-weight:bold; text-align:center;
+            width:100%; max-width:180px;
+            transition: background .2s ease;
         }
-
-        .sidebar a:hover {
-            background-color: #b81f00;
-        }
-
-        .content {
-            flex: 1;
-        }
-
-        h1 {
-            font-size: 2rem;
-            text-align: center;
-            color: #DF2700;
-            margin-bottom: 20px;
-        }
-
-        p {
-            font-size: 1rem;
-            margin-bottom: 20px;
-        }
-
-        img {
-            display: block;
-            max-width: 100%;
-            height: auto;
-            margin: 0 auto 10px auto;
-            border-radius: 8px;
-        }
-
-        .caption {
-            font-size: 0.9rem;
-            text-align: center;
-            color: #555;
-            margin-bottom: 30px;
-        }
-
-        @media (max-width: 800px) {
-            .main-layout {
-                flex-direction: column;
-                align-items: center;
+        .sidebar a:hover{ background:#b81f00; }
+        .content{ flex:1; }
+        h1{ font-size:2rem; text-align:center; color:#DF2700; margin-bottom:20px; }
+        p{ font-size:1rem; margin-bottom:20px; }
+        img{ display:block; max-width:100%; height:auto; margin:0 auto 10px; border-radius:8px; }
+        .caption{ font-size:.9rem; text-align:center; color:#555; margin-bottom:30px; }
+        
+        @media (max-width:800px){
+            .main-layout{ flex-direction:column; align-items:center; }
+            .sidebar{
+                position: static; transform:none; /* no sticky on small screens */
+                flex-direction:row; flex-wrap:wrap; justify-content:center;
             }
-
-            .sidebar {
-                position: static;
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .sidebar a {
-                flex: 1 1 auto;
-                text-align: center;
-                max-width: none;
-            }
+            .sidebar a{ max-width:none; }
         }
     </style>
 </head>
 <body>
     <div class="main-layout">
         
-        <!-- Fixed Sidebar buttons -->
-        <div class="sidebar">
-            <a href="TFM.pdf" target="_blank">📄 Ver TFM</a>
-            <a href="conversaciones.html" target="_blank">💬 Contenido de conversaciones</a>
-            <a href="workflow.png" target="_blank">🗂 Flujo de conversaciones</a>
-        </div>
+    <!-- Sidebar: centered H+V -->
+    <div class="sidebar">
+      <a href="TFM.pdf" target="_blank">📄 Ver TFM</a>
+      <a href="conversaciones.html" target="_blank">💬 Contenido de conversaciones</a>
+      <a href="workflow.png" target="_blank">🗂 Flujo de conversaciones</a>
+    </div>
 
         <!-- Main content -->
         <div class="content">
