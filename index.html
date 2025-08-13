@@ -28,24 +28,23 @@
 
     /* Sidebar centered H+V and stays visible */
         .sidebar{
-            position: sticky;
-            top: 50vh;                 /* stick to middle of viewport */
-            transform: translateY(-50%); /* shift up by half its height */
+            position: fixed;
+            left: 20px; 
+            top: 50vh;                     /* stick to middle of viewport */
+            transform: translateY(-50%);  /* shift up by half its height */
             flex: 0 0 200px;
             display:flex; flex-direction:column; gap:15px;
             align-items:center;        /* horizontal centering of buttons */
             justify-content:center;    /* extra safety for internal centering */
-            height: max-content;
-        }
-        .sidebar a{
-            display:block;
-            background:#DF2700; color:#fff; text-decoration:none;
-            padding:12px 18px; border-radius:5px; font-weight:bold; text-align:center;
-            width:100%; max-width:180px;
-            transition: background .2s ease;
+            z-index:1000;
         }
         .sidebar a:hover{ background:#b81f00; }
-        .content{ flex:1; }
+        
+       / * Shift content so it doesn't overlap fixed sidebar */
+        .content{
+            margin-left: 220px; /* space for sidebar */
+            flex:1;
+        }
         h1{ font-size:2rem; text-align:center; color:#DF2700; margin-bottom:20px; }
         p{ font-size:1rem; margin-bottom:20px; }
         img{ display:block; max-width:100%; height:auto; margin:0 auto 10px; border-radius:8px; }
