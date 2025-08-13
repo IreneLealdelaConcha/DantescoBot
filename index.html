@@ -1,99 +1,88 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TFM Irene Leal - DantescoBot</title>
-    
-    <!-- Favicon for browser tab -->
-    <link rel="icon" href="logo.png" type="image/png">
-    
-    <style>
-        body {
-            font-family: Cambria, serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f8f8;
-            color: #333;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TFM Irene Leal - DantescoBot</title>
+  <link rel="icon" href="logo.png" type="image/png" />
+  <style>
+    body{
+      font-family: Cambria, serif;
+      line-height:1.6; margin:0; padding:0;
+      background:#f8f8f8; color:#333;
+    }
+    .main-layout{
+      display:flex; gap:30px; max-width:1100px; margin:auto; padding:20px;
+    }
+    /* Sidebar fixed to the far left */
+    .sidebar{
+      position: fixed;
+      left: 20px;                  /* distance from left edge */
+      top: 50vh;                   /* center vertically */
+      transform: translateY(-50%);
+      display:flex; flex-direction:column; gap:15px;
+      align-items:center;
+      justify-content:center;
+      z-index:1000;
+    }
+    .sidebar a{
+      display:block;
+      background:#DF2700; color:#fff; text-decoration:none;
+      padding:12px 18px; border-radius:5px; font-weight:bold; text-align:center;
+      width:160px;
+      transition: background .2s ease;
+    }
+    .sidebar a:hover{ background:#b81f00; }
 
-        .main-layout {
-            display: flex;
-            max-width: 1100px;
-            margin: auto;
-            padding: 20px;
-            gap: 30px;
-        }
+    /* Shift content so it doesn't overlap fixed sidebar */
+    .content{
+      margin-left: 220px; /* space for sidebar */
+      flex:1;
+    }
+    h1{ font-size:2rem; text-align:center; color:#DF2700; margin-bottom:20px; }
+    p{ font-size:1rem; margin-bottom:20px; }
+    img{ display:block; max-width:100%; height:auto; margin:0 auto 10px; border-radius:8px; }
+    .caption{ font-size:.9rem; text-align:center; color:#555; margin-bottom:30px; }
 
-    /* Sidebar centered H+V and stays visible */
-        .sidebar{
-            position: fixed;
-            left: 20px; 
-            top: 50vh;                     /* stick to middle of viewport */
-            transform: translateY(-50%);  /* shift up by half its height */
-            flex: 0 0 200px;
-            display:flex; flex-direction:column; gap:15px;
-            align-items:center;        /* horizontal centering of buttons */
-            justify-content:center;    /* extra safety for internal centering */
-            z-index:1000;
-        }
-        .sidebar a:hover{ background:#b81f00; }
-        
-       / * Shift content so it doesn't overlap fixed sidebar */
-        .content{
-            margin-left: 220px; /* space for sidebar */
-            flex:1;
-        }
-        h1{ font-size:2rem; text-align:center; color:#DF2700; margin-bottom:20px; }
-        p{ font-size:1rem; margin-bottom:20px; }
-        img{ display:block; max-width:100%; height:auto; margin:0 auto 10px; border-radius:8px; }
-        .caption{ font-size:.9rem; text-align:center; color:#555; margin-bottom:30px; }
-        
-        @media (max-width:800px){
-            .main-layout{ flex-direction:column; align-items:center; }
-            .sidebar{
-                position: static; transform:none; /* no sticky on small screens */
-                flex-direction:row; flex-wrap:wrap; justify-content:center;
-            }
-            .sidebar a{ max-width:none; }
-        }
-    </style>
+    @media (max-width:800px){
+      .sidebar{
+        position: static; transform:none; left:auto; top:auto;
+        flex-direction:row; flex-wrap:wrap; justify-content:center;
+        margin-bottom:20px;
+      }
+      .content{ margin-left: 0; }
+    }
+  </style>
 </head>
 <body>
-    <div class="main-layout">
-        
-    <!-- Sidebar: centered H+V -->
-    <div class="sidebar">
-      <a href="TFM_IreneLeal.pdf" target="_blank">📄 Ver TFM</a>
-      <a href="Conversaciones_DantescoBot.pdf" target="_blank">💬 Contenido de conversaciones</a>
-      <a href="Diagrama_DantescoBot.png" target="_blank">🗂 Flujo de conversaciones</a>
-    </div>
+  <div class="sidebar">
+    <a href="TFM_IreneLeal.pdf" target="_blank">📄 Ver TFM</a>
+    <a href="Conversaciones_DantescoBot.pdf" target="_blank">💬 Contenido de conversaciones</a>
+    <a href="Diagrama_DantescoBot.png" target="_blank">🗂 Flujo de conversaciones</a>
+  </div>
 
-        <!-- Main content -->
-        <div class="content">
-            <h1>DantescoBot: asistente conversacional literario</h1>
-            <p>El objetivo de este chatbot es crear un vínculo entre literatura y tecnología en un espacio virtual que permita, por un lado, que quienes conocen la obra de Dante puedan acercarse a herramientas digitales mediante una interfaz conversacional.</p>
-            <p>Por otro lado, cualquier persona interesada en los avances tecnológicos en humanidades digitales pueda interactuar con la herramienta y aprender aspectos estimulantes sobre Dante Alighieri y su obra.</p>
-            <p>Por favor, para poder explorar este recurso, accede al botón que se encuentra abajo a la derecha.</p>
-            <img src="https://s1.eestatic.com/2015/03/04/el-cultural/el_cultural_15509516_218633369_1706x960.jpg" alt="Retrato de Dante Alighieri">
-            <p class="caption"><i>Retrato de Dante Alighieri</i>. Attilio Runcaldier (1801-1884). Rávena, Museo Dantesco.</p>
-        </div>
-    </div>
+  <div class="content">
+    <h1>DantescoBot: asistente conversacional literario</h1>
+    <p>El objetivo de este chatbot es crear un vínculo entre literatura y tecnología en un espacio virtual que permita, por un lado, que quienes conocen la obra de Dante puedan acercarse a herramientas digitales mediante una interfaz conversacional.</p>
+    <p>Por otro lado, cualquier persona interesada en los avances tecnológicos en humanidades digitales pueda interactuar con la herramienta y aprender aspectos estimulantes sobre Dante Alighieri y su obra.</p>
+    <p>Por favor, para poder explorar este recurso, accede al botón que se encuentra abajo a la derecha.</p>
+    <img src="https://s1.eestatic.com/2015/03/04/el-cultural/el_cultural_15509516_218633369_1706x960.jpg" alt="Retrato de Dante Alighieri" />
+    <p class="caption"><i>Retrato de Dante Alighieri</i>. Attilio Runcaldier (1801-1884). Rávena, Museo Dantesco.</p>
+  </div>
 
-    <!-- Watson Assistant Script -->
-    <script type="text/javascript">
-        window.watsonAssistantChatOptions = {
-            integrationID: "0ed040a0-e069-4569-bcda-c09b1fbc5184",
-            region: "eu-gb",
-            serviceInstanceID: "2cc6f521-cdea-4a99-8440-a906b0309815",
-            onLoad: function(instance) { instance.render(); }
-        };
-        setTimeout(function(){
-            const t = document.createElement('script');
-            t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/latest/WatsonAssistantChatEntry.js";
-            document.head.appendChild(t);
-        });
-    </script>
+  <!-- Watson Assistant -->
+  <script>
+    window.watsonAssistantChatOptions = {
+      integrationID: "0ed040a0-e069-4569-bcda-c09b1fbc5184",
+      region: "eu-gb",
+      serviceInstanceID: "2cc6f521-cdea-4a99-8440-a906b0309815",
+      onLoad: function(instance){ instance.render(); }
+    };
+    setTimeout(function(){
+      const t=document.createElement('script');
+      t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/latest/WatsonAssistantChatEntry.js";
+      document.head.appendChild(t);
+    });
+  </script>
 </body>
 </html>
