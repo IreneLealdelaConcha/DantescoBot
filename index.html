@@ -44,4 +44,41 @@
             font-size: 0.9rem;
             text-align: center;
             color: #555;
-            margin-bo
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>DantescoBot: asistente conversacional literario</h1>
+        <p>Se pretende crear una conexión entre literatura y tecnología en un espacio virtual para permitir, por un lado, que el público conocedor de la obra dantesca pueda acercarse a herramientas digitales a través de una interfaz conversacional, y por otro, que todo aquel interesado en los avances tecnológicos en las humanidades digitales pueda realizar pruebas de interacción y aprender nociones estimulantes sobre Dante Alighieri y su obra.</p>
+        <img src="https://s1.eestatic.com/2015/03/04/el-cultural/el_cultural_15509516_218633369_1706x960.jpg" alt="Retrato de Dante Alighieri">
+        <p class="caption"><i>Retrato de Dante Alighieri</i>. Attilio Runcaldier (1801-1884). Rávena, Museo Dantesco.</p>
+    </div>
+
+    <!-- Watson Assistant Script -->
+    <script type="text/javascript">
+        window.watsonAssistantChatOptions = {
+            integrationID: "0ed040a0-e069-4569-bcda-c09b1fbc5184",
+            region: "eu-gb",
+            serviceInstanceID: "2cc6f521-cdea-4a99-8440-a906b0309815",
+            onLoad: function(instance) { instance.render(); }
+        };
+        setTimeout(function(){
+            const t = document.createElement('script');
+            t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/latest/WatsonAssistantChatEntry.js";
+            document.head.appendChild(t);
+        });
+    </script>
+</body>
+</html>
