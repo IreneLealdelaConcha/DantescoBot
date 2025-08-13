@@ -26,12 +26,16 @@
             gap: 30px;
         }
 
+        /* Fixed sidebar */
         .sidebar {
+            position: sticky;
+            top: 20px; /* distance from top of page */
             flex: 0 0 200px;
             display: flex;
             flex-direction: column;
             gap: 15px;
-            align-items: center; /* Centers horizontally */
+            align-items: center;
+            height: fit-content;
         }
 
         .sidebar a {
@@ -42,7 +46,7 @@
             border-radius: 5px;
             font-weight: bold;
             text-align: center;
-            width: 100%; /* Buttons same width */
+            width: 100%;
             max-width: 180px;
             transition: background-color 0.3s ease;
         }
@@ -89,6 +93,7 @@
             }
 
             .sidebar {
+                position: static;
                 flex-direction: row;
                 flex-wrap: wrap;
                 justify-content: center;
@@ -105,14 +110,14 @@
 <body>
     <div class="main-layout">
         
-        <!-- Left column: Sidebar buttons -->
+        <!-- Fixed Sidebar buttons -->
         <div class="sidebar">
             <a href="TFM.pdf" target="_blank">📄 Ver TFM</a>
             <a href="conversaciones.html" target="_blank">💬 Contenido de conversaciones</a>
             <a href="workflow.png" target="_blank">🗂 Flujo de conversaciones</a>
         </div>
 
-        <!-- Right column: Main content -->
+        <!-- Main content -->
         <div class="content">
             <h1>DantescoBot: asistente conversacional literario</h1>
             <p>El objetivo de este chatbot es crear un vínculo entre literatura y tecnología en un espacio virtual que permita, por un lado, que quienes conocen la obra de Dante puedan acercarse a herramientas digitales mediante una interfaz conversacional.</p>
