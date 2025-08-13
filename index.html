@@ -31,6 +31,7 @@
             display: flex;
             flex-direction: column;
             gap: 15px;
+            align-items: center; /* Centers horizontally */
         }
 
         .sidebar a {
@@ -41,6 +42,8 @@
             border-radius: 5px;
             font-weight: bold;
             text-align: center;
+            width: 100%; /* Buttons same width */
+            max-width: 180px;
             transition: background-color 0.3s ease;
         }
 
@@ -94,6 +97,7 @@
             .sidebar a {
                 flex: 1 1 auto;
                 text-align: center;
+                max-width: none;
             }
         }
     </style>
